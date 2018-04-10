@@ -1,0 +1,19 @@
+<head>
+    <style>
+        table,th,td{padding: 5px;}
+    </style>
+</head>
+
+<body>
+    <form  method="POST" action="/updateseason/<%= id %>">
+        <h2>Edit Season</h2>
+        <table>
+            <tr>
+                <td><label for="season">Season </label></td>
+                <td> : <input type="text" name="season" placeholder="<%= season[0].nama_season%>" /></td>
+            </tr>
+        </table>
+        <input type="submit" value="submit"/>
+    </form>
+    <br/>
+</body>

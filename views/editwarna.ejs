@@ -1,0 +1,22 @@
+<head>
+    <style>
+        table,th,td{padding: 5px;}
+    </style>
+</head>
+
+<body>
+    <form  method="POST" action="/updatewarna/<%= id%>">
+        <h2>Warna</h2>
+        <table>
+            <tr>
+                <td>Warna</td>
+                <td><input type="text" name="warna" placeholder="<%= warna[0].nama_warna%>"></td>
+            </tr>
+        </table>
+        <br/>
+        <input type="submit" value="submit"/>
+    </form>
+    <br/>
+
+    
+</body>

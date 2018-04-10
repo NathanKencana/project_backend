@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product</title>
+    <style>
+        table,th,td{padding: 5px;}
+    </style>
+</head>
+<body>
+    <h2> <%= namaseason %> : <%= product[0].nama_kategori  %>  </h2>
+    <form method="POST" action="/addcart">
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Harga</th>
+                <th>Description</th>
+                <!-- <th>Warna</th>
+                <th>Size</th>
+                <th>stock</th> -->
+            </tr>
+            <% product.forEach(x => { %>
+            <tr>                  
+                <td><a href="/userwarna/<%= x.id %>"><%= x.nama_product %></a></td>
+                <td><%= x.harga  %></td>   
+                <td><%= x.description %></td>
+                <!-- <td><%= x.nama_warna %></td>
+                <td><%= x.size %></td>
+                <td><%= x.stock %></td>
+                <td><input type="submit" value="Add to Cart"></td> -->
+            </tr>
+            <%})%>
+        </table>
+    </form>
+    <br/>
+</body>
+</html>

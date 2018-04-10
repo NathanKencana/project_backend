@@ -1,0 +1,23 @@
+<head>
+    <style>
+        table,th,td{padding: 5px;}
+    </style>
+</head>
+
+<body>
+    <form  method="POST" action="/updatesize/<%= id%>">
+        <h2>Edit Size</h2>
+        <table>
+            <tr>
+                <td><label for="size">Size </label></td>
+                <td> : <input type="text" name="size" placeholder="<%= size[0].size %>"/></td>
+            </tr>
+            <tr>
+                <td><label for="stock">Stock </label></td>
+                <td> : <input type="text" name="stock" placeholder="<%= size[0].stock %>"/></td>
+            </tr>
+        </table>
+        <input type="submit" value="submit"/>
+    </form>
+    <br/>
+</body>

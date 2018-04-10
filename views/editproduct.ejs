@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table,th,td{padding: 5px;}
+    </style>
+</head>
+<body>
+    <form method="post" action="/updateproduct/<%= id %>">
+        <h2><%= product.nama_kategori %></h2>
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Harga</th>
+                <th>Description</th>                
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="updateproduct" placeholder="<%= product[0].nama_product %>"/>
+                </td>
+                <td>
+                    <input type="text" name="updateharga" placeholder="<%= product[0].harga %>"/>
+                </td>
+                <td>
+                    <input type="text" name="updatedesc" placeholder="<%= product[0].description %>"/>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <input type="submit" value="submit"/>        
+    </form>
+    <br/>
+</body>
+</html>

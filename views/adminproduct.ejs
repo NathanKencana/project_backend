@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Product</title>
+    <style>
+        table,th,td{padding: 5px;}
+    </style>
+</head>
+<body>
+    <form method="post" action="/insertproduct/<%= kategoriid %>">
+        <h2> <%= namaseason %> : <%= product[0].nama_kategori  %>  </h2>
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Harga</th>
+                <th>Description</th>
+            </tr>
+            <% product.forEach(x => { %>
+            <tr>
+                             
+                <td><a href="/adminwarna/<%= x.id %>"><%= x.nama_product %></a></td>
+                <td><%= x.harga  %></td>   
+                <td><%= x.description %></td>                                             
+                <td><a href="/editproduct/<%= x.id  %>">edit</a></td>
+                <td><a href="/deleteproduct/<%= x.id  %>">delete</a></td>
+            </tr>
+            <%})%>
+        </table>
+        
+        <table>
+            <tr>
+                <td><label for="product">Product </label></td>
+                <td>: <input type="text" name="product" placeholder="Product baru" required/></td>
+            </tr>
+            <tr>
+                <td><label for="harga">Harga </label></td>
+                <td>: <input type="number" name="harga" placeholder="Harga Product" required/></td>
+            </tr>
+            <tr>
+                <td><label for="description">Description </label></td>
+                <td>: <input type="text" name="description" placeholder="Deskripsi Product" required/></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="submit"/>         
+                </td>
+            </tr>
+        </table>
+    </form>
+    <br/>
+    
+</body>
+</html>

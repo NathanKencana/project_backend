@@ -1,0 +1,34 @@
+<head>
+    <style>
+        table,th,td{padding: 5px;}
+    </style>
+    <title>Admin Season</title>
+</head>
+
+<body>
+    <h1>Admin</h1>
+    <form method="post" action="/insertseason">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Season</th>
+            </tr>
+
+            <% season.forEach(x => { %>
+                <tr>
+                    <td><%= x.id%></td>
+                    <td><a href="/adminkategori/<%= x.id%>"> <%= x.nama_season%> </a></td>
+                    <td><a href="/deleteseason/<%= x.id %>">delete</a></td>
+                    <td><a href="/updateseason/<%= x.id %>">edit</a></td>
+                </tr>
+            <%})%>
+        </table>
+        <br/>
+        <label for="season">Season : </label>
+        <input type="text" name="season" placeholder="season baru"/>
+        <input type="submit" value="submit"/>
+    </form>
+</body>
+
+
+

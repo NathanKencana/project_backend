@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cart</title>
+    <style>
+        table,th,td{padding: 5px;}
+    </style>
+</head>
+<body>
+    <h2> Cart </h2>
+    <form method="POST" action="/addcart">
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Warna</th>
+                <th>Size</th>
+                <th>Harga</th>
+                <th>Qty</th>
+            </tr>
+            <% cart.forEach(x => { %>
+            <tr>                  
+                <td><a href="/userwarna/<%= x.id %>"><%= x.nama_product %></a></td>
+                <td><%= x.nama_product  %></td>   
+                <td><%= x.nama_warna %></td>
+                <td><%= x.size %></td>
+                <td><%= x.harga %></td>
+                <td><%= x.qty %></td>                
+            </tr>
+            <%})%>
+        </table>
+    </form>
+    <br/>
+</body>
+</html>

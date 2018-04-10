@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Kategori</title>
+    <style>
+        table,th,td{padding: 5px;}
+    </style>
+</head>
+<body>
+    <form method="post" action="/insertkategori/<%=seasonid%>">
+        <h2><%= kategori[0].nama_season %></h2>
+        <table>
+            <tr>
+                <th>Kategori</th>
+            </tr>
+        
+            <% kategori.forEach(x => { %>
+            <tr>
+                <td><a href="/adminproduct/<%= x.id%>"> <%=x.nama_kategori%> </a></td>                
+                <td><a href="/editkategori/<%= x.id %>">edit</a></td>
+                <td><a href="/deletekategori/<%= x.id %>">delete</a></td>
+            </tr>
+            <%})%>
+        </table>
+        <br/>
+
+        <label for="season">Kategori : </label>
+        <input type="text" name="kategori" placeholder="kategori baru" required/>
+        <input type="submit" value="submit"/>        
+    </form>
+    <br/>
+</body>
+</html>

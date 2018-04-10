@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Warna &#38 Size</title>
+    <style>
+        table,th,td{padding: 5px;}
+    </style>
+</head>
+<body>
+    <h2><%= warna[0].nama_kategori  %> : <%= warna[0].nama_product %> </h2>
+    <form method="POST" action="/usercart/">
+        <table>
+            <tr>
+                <th>Warna</th>
+                <th>Size</th>
+                <th>stock</th>
+            </tr>
+            <% warna.forEach(x => { %>
+            <tr>                  
+                <td><%= x.nama_warna %></td>
+                <td><%= x.size %></td>
+                <td><%= x.stock %></td>
+                <td><input type="submit" value="Add to Cart"></td>
+            </tr>
+            <%})%>
+        </table>
+    </form>
+    <br/>
+</body>
+</html>

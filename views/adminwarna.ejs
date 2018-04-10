@@ -1,0 +1,36 @@
+<head>
+    <style>
+        table,th,td{padding: 5px;}
+    </style>
+    <title>Admin Warna</title>
+</head>
+
+<body>
+    <form  method="POST" action="/insertwarna/<%= productid%>">
+        <table>
+            <tr>
+                <th>Warna</th>
+                <th>Size</th>
+                <th>Stock</th>
+            </tr>
+            <% warna.forEach(x => { %>
+                <tr>
+                    <td><a href="/adminsize/<%= x.id%>"> <%= x.nama_warna%> </a></td>
+                    <td> <%= x.size %> </td>
+                    <td> <%= x.stock %> </td>
+                    <td><a href="/editwarna/<%= x.id  %>">edit</a></td>                                    
+                    <td><a href="/deletewarna/<%= x.id  %>">delete</a></td>
+                </tr>
+            <% }) %>
+        </table>
+        <br/>
+        <table>
+            <tr>
+                <td><label for="warna">Warna </label></td>
+                <td> : <input type="text" name="warna" placeholder="Warna Barang"/></td>
+            </tr>
+        </table>
+        <input type="submit" value="submit"/>
+    </form>
+    <br/>
+</body>

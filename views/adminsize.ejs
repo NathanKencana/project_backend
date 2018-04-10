@@ -1,0 +1,39 @@
+<head>
+    <style>
+        table,th,td{padding: 5px;}
+    </style>
+    <title>Admin Size</title>
+</head>
+
+<body>
+    <form  method="POST" action="/insertsize/<%= warnaid%>">
+        <h2>Size</h2>
+        <table>
+            <tr>
+                <th>Size</th>
+                <th>Stock</th>
+            </tr>
+            <% size.forEach(x => { %>
+                <tr>
+                    <td> <%= x.size %> </td>
+                    <td> <%= x.stock %> </td>
+                    <td><a href="/editsize/<%= x.id  %>">edit</a></td>                                    
+                    <td><a href="/deletesize/<%= x.id  %>">delete</a></td>
+                </tr>
+            <% }) %>
+        </table>
+        <br/>
+        <table>
+            <tr>
+                <td><label for="warna">Size </label></td>
+                <td> : <input type="text" name="size" placeholder="Ukuran Barang"/></td>
+            </tr>
+            <tr>
+                <td><label for="warna">Stock </label></td>
+                <td> : <input type="text" name="stock" placeholder="Stock Barang"/></td>
+            </tr>
+        </table>
+        <input type="submit" value="submit"/>
+    </form>
+    <br/>
+</body>
